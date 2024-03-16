@@ -50,6 +50,27 @@ public class CoreArrayWrapper {
         System.out.println(sum);
         System.out.println(sum / drr.length);
 
+        //sort elements in an array in ascending order
+        int[] sortMan = new int[]{103, 230, 110, 345, 432};
+        for (int i=0; i<sortMan.length; i++) {
+            int smaller = sortMan[i];
+            int smallerIndex = i;
+            for (int j=i+1; j<sortMan.length; j++) {
+                if (sortMan[j] < smaller) {
+                    smaller = sortMan[j];
+                    smallerIndex = j;
+                }
+            }
+            sortMan[smallerIndex] = sortMan[i];
+            sortMan[i] = smaller;
+        }
+        System.out.println("sortman array sorted : ");
+        for (int e : sortMan) {
+            System.out.print(e + " ");
+        }
+
+        System.out.println("");
+        System.out.println("Check if elements in array is sorted (Ascending or descending)");
         //Check if elements in array is sorted (Ascending or descending)
         int[] err = new int[]{100, 20, 10, 3, 4};
         boolean isAscending = false;

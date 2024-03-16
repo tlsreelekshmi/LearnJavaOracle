@@ -17,7 +17,7 @@ public class CoreMultiDimArrayWrapper {
         intMatrix [1][2] = 2;
         intMatrix [2][0] = 6;
         intMatrix [2][1] = 9;
-        intMatrix [2][2] = 4;
+        intMatrix [2][2] = 1;
 
         //how to print elements in a matrix ?
         for (int i=0; i<3; i++) {
@@ -29,7 +29,7 @@ public class CoreMultiDimArrayWrapper {
         }
 
         //or we can initialise while declaring like this
-        int [][] integerMatrix = new int[][] {{2,7,3}, {5,8,2}, {6,9,4}};
+        int [][] integerMatrix = new int[][] {{2,7,3}, {5,8,2}, {6,9,1}};
 
         //how to find the number of rows and coloums of a matrix
         int rows = integerMatrix.length;
@@ -68,6 +68,33 @@ public class CoreMultiDimArrayWrapper {
                 }
             }
         }
-        System.out.println("Minimum value from the matrix : " + min);
+        //System.out.println("Minimum value from the matrix : " + min);
+
+        //First write the above code to find minimum number
+        int minNum = integerMatrix[0][0];
+        int minNumRow = 0;
+        for (int i=0; i<rows; i++) { //to find min number and it's row
+            for (int j=0; j<cols; j++) {
+                int num = integerMatrix[i][j];
+                System.out.println("number " + num);
+                if (num < minNum) {
+                    minNum = num;
+                    minNumRow=i;
+                    System.out.println("a min num found in row - " + minNumRow);
+                }
+            }
+        }
+        System.out.println("Minimum value : " + minNum);
+        System.out.println("min num row - " + minNumRow);
+        int maxNumInRow = 0;
+        for (int z=0; z<cols; z++) {
+            int number = integerMatrix[minNumRow][z];
+            if (number > maxNumInRow) {
+                maxNumInRow = number;
+            }
+        }
+        System.out.println("max number in row with minimum number - " + maxNumInRow);
+
+
     }
 }
