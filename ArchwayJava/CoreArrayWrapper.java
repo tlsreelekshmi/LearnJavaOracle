@@ -135,13 +135,61 @@ public class CoreArrayWrapper {
         System.out.println("max length " + maxLength);
 
         //Check if a given string exists in the array. - kathu
-        for(String name :sree) {
-            if (name =="kathu") {
+        for (String name : sree) {
+            if (name == "kathu") {
                 System.out.println("String \'kathu\' exists in array sree");
                 break;
             } else {
                 System.out.printf("name : %s String 'kathu' does not found%n", name);
             }
+        }
+
+        //sort elements in array alphabetically
+        String[] myStrings = {"banana", "apple", "grape", "orange"};
+        for (int i=0; i<myStrings.length-1; i++) {
+            for (int j=0; j<myStrings.length-i-1; j++) {
+                int comparevalue = myStrings[j].compareTo(myStrings[j + 1]); //it compares alphabetically based on unicode lexicographically
+                System.out.println("compare value " + comparevalue);
+                if (comparevalue > 0) {
+                    // Swap elements
+                    String temp = myStrings[j];
+                    myStrings[j] = myStrings[j + 1];
+                    myStrings[j + 1] = temp;
+                }
+            }
+        }
+        for (String str : myStrings) {
+            System.out.println(str);
+        }
+
+        //Reverse the order of strings in an array.
+        String[] revArray = {"banana", "green apple", "grape fruit", "orange", "plum", "cherry", "pine apple", "dragon fruit"};
+        int total = revArray.length;
+        String[] tempoArray = new String[total];
+        for (int i=1; i<=total; i++) {
+            tempoArray[i-1] = revArray[total - i];
+            System.out.println(total-i + " th item moved to " + (i-1) + " th");
+        }
+
+        for (String str : tempoArray) {
+            System.out.print(str + ", ");
+        }
+        System.out.println("");
+
+        //Count the occurrences of a specific character in all strings 'r'
+        for(String fruit : revArray) {
+            int count = fruit.split("r").length - 1;
+            System.out.printf("%s : %s%n", fruit, count);
+        }
+
+        //Remove whitespace from all strings in the array.
+        String[] cleanArray = new String[revArray.length];
+        for(int i=0; i<revArray.length; i++) {
+            cleanArray[i] = revArray[i].replaceAll("\\s+", "");
+        }
+
+        for(String ele : cleanArray) {
+            System.out.print(ele + ", ");
         }
     }
 }
