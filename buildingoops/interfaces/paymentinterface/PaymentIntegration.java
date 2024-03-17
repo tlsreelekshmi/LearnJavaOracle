@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.paymentinterface;
 
 public interface PaymentIntegration {
 

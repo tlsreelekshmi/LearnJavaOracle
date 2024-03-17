@@ -18,12 +18,12 @@ public class BikeFeatures extends ParentCompanyClass{
     }
 
     @Override
-    void tyre() {
+    public void tyre() { //since abstract method is public, we should use public here
         System.out.println("bike 2 wheeler tyre");
     }
 
     @Override
-    void body() {
+    protected void body() { //since abstract method is protected, we should use either protected or public here
         System.out.println("bike's body");
     }
 }

@@ -1,8 +1,8 @@
-package interfaces;
+package interfaces.paymentinterface;
 
 import java.util.Scanner;
 
-public class CardPayment implements PaymentIntegration {
+public class PaymentViaCard implements PaymentIntegration {
 
     String tesNetwork = "prod";
 

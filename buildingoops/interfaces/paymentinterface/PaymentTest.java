@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.paymentinterface;
 
 import java.util.Scanner;
 
@@ -25,9 +25,9 @@ public class PaymentTest {
         String paymentMethod = new Scanner(System.in).nextLine();
 
         if (paymentMethod.equalsIgnoreCase("card")) {
-            payment = new CardPayment();
+            payment = new PaymentViaCard();
         } else if (paymentMethod.equalsIgnoreCase("upi")) {
-            payment = new UpiPayment();
+            payment = new PaymentViaUPI();
         }
     }
 }

@@ -1,6 +1,6 @@
-package interfaces;
+package interfaces.paymentinterface;
 
-public class UpiPayment implements PaymentIntegration {
+public class PaymentViaUPI implements PaymentIntegration {
 
     String environment = "stage";
 
