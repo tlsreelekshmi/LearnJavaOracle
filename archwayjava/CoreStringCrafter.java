@@ -38,7 +38,7 @@ public class CoreStringCrafter {
 
         /*  We can do the same thing with String builder. the only diff is :-String Buffer is thread safe,
             String builder is not thread safe, non synchronised, so it's faster
-            If it's parellel testing, choose string bugger. Other wise String builder is better
+            If it's parellel testing, choose string buffer. Other wise String builder is better
          */
 
         StringBuilder nameString = new StringBuilder("john");

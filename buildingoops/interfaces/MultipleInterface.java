@@ -2,6 +2,17 @@ package interfaces;
 
 interface Interface1 {
     void method1();
+    default void method3() {
+        System.out.println("Method of interface1 implemented...");
+        //These default methods are added after java 8, allows constructor to have non abstract methods
+    }
+
+    private void privateMethodInInterface() {
+        System.out.println("Method of interface1 implemented...");
+        //These private methods are added after java 9, allows interface to use it within it
+    }
+
+    static String variable = "Interface allows static methods now after java 9.";
 }
 
 interface Interface2 {
@@ -14,6 +25,7 @@ class MyClass implements Interface1, Interface2 {
         MyClass myClass = new MyClass();
         myClass.method1();
         myClass.method2();
+        myClass.method3(); //calling default method in interface
     }
 
     public void method1() {
